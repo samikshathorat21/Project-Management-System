@@ -16,7 +16,7 @@ const IssueList = ({title , status}) => {
 
     useEffect(()=>{
         dispatch(fetchIssues(id))
-    },[id]) 
+    },[id,dispatch]) 
   return (
     <div>
       <Dialog>

@@ -56,6 +56,8 @@ export const updateIssueStatus = ({ id, status }) => {
         issues: response.data,
       });
     } catch (error) {
+      console.log("error", error);
+      console.log("Error Response:", error.response?.data);
       dispatch({
         type: actionTypes.UPDATE_ISSUE_STATUS_FAILURE,
         error: error.message,
@@ -78,6 +80,7 @@ export const assignedUserToIssue = ({ issueId, userId }) => {
       });
     } catch (error) {
       console.log("error", error);
+      console.log("Error Response:", error.response?.data); 
       dispatch({
         type: actionTypes.ASSIGNED_ISSUE_TO_USER_FAILURE,
         error: error.message,
@@ -99,6 +102,8 @@ export const createIssue = (issueData) => {
       });
       console.log("issue created successfully",response.data)
     } catch (error) {
+      console.log("error", error);
+      console.log("Error Response:", error.response?.data);
       dispatch({
         type: actionTypes.CREATE_ISSUE_FAILURE,
         error: error.message,
